@@ -1,0 +1,26 @@
+Environment Setup for Windows:
+1. Download and install WAMP: http://www.wampserver.com/en/
+
+2. Add PHP to the PATH environment variable:
+windows key + pause 
+click on Advance system settings
+click Environment Variable
+System variables part -> Path -> Edit and the add
+C:\wamp\bin\php\php5.3.8;
+close you cmd prompt if its open
+It's Done!
+
+3. Download and Install Symfony Framework:
+Linux and Mac OS X:
+$ sudo curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
+$ sudo chmod a+x /usr/local/bin/symfony
+
+Windows:
+c:\> php -r "file_put_contents('symfony', file_get_contents('https://symfony.com/installer'));"
+Move the downloaded symfony file to your projects directory and execute it as follows:
+c:\> php symfony
+
+4.Download and Install Composer PHP Dependency Manager. 
+See the instructions here: https://getcomposer.org/download/
+
+//TO BE CONTINUED...
