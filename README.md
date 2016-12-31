@@ -10,19 +10,29 @@ Installation
 Follow [this guide] (https://getcomposer.org/download/) to install Composer
 
 Then you can make it global by typing:
-```
+
+```shell
 $ mv composer.phar /usr/local/bin/composer
 ```
 
 Install dependencies
 
-```
+```shell
 composer install
 ```
+
+Configuration
+========================
+
+Database
+------------------------
+
+edit this file: `app/config/parameters.yml`
+
 
 Run
 ========================
 
-```
+```shell
 php bin/console server:run
 ```
