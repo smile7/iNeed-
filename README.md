@@ -7,12 +7,10 @@ Requirements
 Installation
 ========================
 
-Follow [this guide] (https://getcomposer.org/download/) to install Composer
-
-Then you can make it global by typing:
+Follow [this guide] (https://getcomposer.org/download/) to install Composer. Then you can make it global by typing:
 
 ```shell
-$ mv composer.phar /usr/local/bin/composer
+mv composer.phar /usr/local/bin/composer
 ```
 
 Install dependencies
@@ -30,8 +28,16 @@ Database
 edit this file: `app/config/parameters.yml`
 
 
-Run
+
+List Symfony commmands
 ========================
+
+```shell
+php bin/console list
+```
+
+Run a web server
+------------------------
 
 ```shell
 php bin/console server:run
