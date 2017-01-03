@@ -1,0 +1,24 @@
+{
+  "name": "ineed",
+  "version": "0.1.0",
+  "description": "Requirements ========================",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "php ./vendor/phpunit/phpunit/phpunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smile7/iNeed-.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smile7/iNeed-/issues"
+  },
+  "homepage": "https://github.com/smile7/iNeed-#readme",
+  "devDependencies": {
+  }
+}

@@ -23,10 +23,8 @@ Install dependencies
 ```shell
 composer install
 bower install
+npm install
 ```
-
-
-
 
 Configuration
 ========================
@@ -34,20 +32,26 @@ Configuration
 Database
 ------------------------
 
-edit this file: `app/config/parameters.yml`
+edit `app/config/parameters.yml`
 
 
-
-List Symfony commmands
+View Symfony commmands
 ========================
 
 ```shell
 php bin/console list
 ```
 
-Run a web server
+Run the web server
 ------------------------
 
 ```shell
 php bin/console server:run
+```
+
+PHP Unit Testing
+========================
+
+```shell
+npm test
 ```
