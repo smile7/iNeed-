@@ -1,0 +1,45 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * UserServices
+ *
+ * @ORM\Table(name="user_services", indexes={@ORM\Index(name="FK_user_services_service_id", columns={"service_id"})})
+ * @ORM\Entity
+ */
+class UserServices
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="price", type="integer", nullable=true)
+     */
+    private $price;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="user_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $userId;
+
+    /**
+     * @var \AppBundle\Entity\Services
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Services")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="service_id", referencedColumnName="service_id")
+     * })
+     */
+    private $service;
+
+
+}
+
