@@ -1,0 +1,24 @@
+{
+  "name": "iNeed-",
+  "homepage": "https://github.com/smile7/iNeed-",
+  "authors": [
+    "Silvena Miteva",
+    "Teodora Vasileva",
+    "Plamen Markov",
+    "Tihomir Yanev <tdyanev@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.7"
+  }
+}

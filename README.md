@@ -1,8 +1,10 @@
 Requirements
 ========================
 
-* Composer v1.3.0
-* Symfony  v3.2.1
+* Composer v1.3
+* Symfony  v3.2
+* npm      v3.10
+* bower    v1.8
 
 Installation
 ========================
@@ -13,11 +15,18 @@ Follow [this guide] (https://getcomposer.org/download/) to install Composer. The
 mv composer.phar /usr/local/bin/composer
 ```
 
+Get [npm] (https://nodejs.org/en/download/) and [bower] (https://bower.io/#install-bower) 
+
+
 Install dependencies
 
 ```shell
 composer install
+bower install
 ```
+
+
+
 
 Configuration
 ========================
