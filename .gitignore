@@ -1,5 +1,6 @@
 /app/config/parameters.yml
 /build/
+/bower_components/
 /phpunit.xml
 /var/*
 !/var/cache

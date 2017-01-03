@@ -1,11 +1,16 @@
 Requirements
 ========================
 
-* Composer v1.3.0
-* Symfony  v3.2.1
+* Composer v1.3
+* Symfony  v3.2
+* npm      v3.10
+* bower    v1.8
 
 Installation
 ========================
+
+Get [npm] (https://nodejs.org/en/download/) and [bower] (https://bower.io/#install-bower).
+
 
 Follow [this guide] (https://getcomposer.org/download/) to install Composer. Then you can make it global by typing:
 
@@ -17,7 +22,11 @@ Install dependencies
 
 ```shell
 composer install
+bower install
 ```
+
+
+
 
 Configuration
 ========================
