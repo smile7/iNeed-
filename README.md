@@ -9,14 +9,14 @@ Requirements
 Installation
 ========================
 
+Get [npm] (https://nodejs.org/en/download/) and [bower] (https://bower.io/#install-bower).
+
+
 Follow [this guide] (https://getcomposer.org/download/) to install Composer. Then you can make it global by typing:
 
 ```shell
 mv composer.phar /usr/local/bin/composer
 ```
-
-Get [npm] (https://nodejs.org/en/download/) and [bower] (https://bower.io/#install-bower) 
-
 
 Install dependencies
 
