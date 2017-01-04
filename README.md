@@ -46,7 +46,7 @@ Run the web server
 ------------------------
 
 ```shell
-npm server
+npm run server
 ```
 
 PHP Unit Testing
