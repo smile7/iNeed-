@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/home", name="home")
      */
     public function homeAction(Request $request)
     {
@@ -30,5 +30,13 @@ class DefaultController extends Controller
     public function searchResultsAction()
     {
         return $this->render('default/search.html.twig');
+    }
+    
+    /**
+     * @Route("/", name="index")
+     */
+    public function indexAction(Request $reqiest)
+    {
+    	return $this->redirectToRoute('fos_user_security_login');
     }
 }
