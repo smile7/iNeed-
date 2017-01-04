@@ -7,6 +7,7 @@
     "test": "tests"
   },
   "scripts": {
+    "server": "php bin/console server:run",
     "test": "php ./vendor/phpunit/phpunit/phpunit"
   },
   "repository": {
