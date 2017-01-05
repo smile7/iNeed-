@@ -2,9 +2,9 @@
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
   <entity name="AppBundle\Entity\Certificates" table="certificates">
     <indexes>
-      <index name="FK_certificates_user_id" columns="user_id"/>
+      <index name="FK_certificates_users_id" columns="user_id"/>
     </indexes>
-    <id name="certificateId" type="integer" column="certificate_id">
+    <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
     <field name="name" type="string" column="name" length="255" nullable="false">
@@ -14,7 +14,7 @@
     </field>
     <many-to-one field="user" target-entity="Users" fetch="LAZY">
       <join-columns>
-        <join-column name="user_id" referenced-column-name="user_id"/>
+        <join-column name="user_id" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
   </entity>

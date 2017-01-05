@@ -13,7 +13,7 @@
     </field>
     <one-to-one field="service" target-entity="Services" fetch="LAZY">
       <join-columns>
-        <join-column name="service_id" referenced-column-name="service_id"/>
+        <join-column name="service_id" referenced-column-name="id"/>
       </join-columns>
     </one-to-one>
   </entity>

@@ -1,182 +1,72 @@
 <?php
+// src/AppBundle/Entity/User.php
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-//use Symfony\Component\Security\Core\User\UserInterface;
 use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Users
- *
- * @ORM\Table(name="users")
  * @ORM\Entity
+ * @ORM\Table(name="fos_user")
  */
 class Users extends BaseUser
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="username", type="string", length=255, nullable=false)
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $username;
+    protected $id;
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
+    /**
+     * @var \DateTime
+     */
+    private $birthDate;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=255, nullable=false)
-     */
-    protected $password;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255, nullable=false)
-     */
-    protected $email;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="age", type="integer", nullable=true)
-     */
-    private $age;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="description", type="string", length=255, nullable=true)
      */
     private $description;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="user_id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @var string
      */
-    private $userId;
+    private $fullName;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Regions", inversedBy="user")
-     * @ORM\JoinTable(name="user_regions",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="region_id", referencedColumnName="region_id")
-     *   }
-     * )
      */
     private $region;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        //$this->region = new \Doctrine\Common\Collections\ArrayCollection();
-        parent::__construct();
-    }
-
 
     /**
-     * Set username
+     * Set birthDate
      *
-     * @param string $username
+     * @param \DateTime $birthDate
      *
      * @return Users
      */
-    public function setUsername($username)
+    public function setBirthDate($birthDate)
     {
-        $this->username = $username;
+        $this->birthDate = $birthDate;
 
         return $this;
     }
 
     /**
-     * Get username
+     * Get birthDate
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getUsername()
+    public function getBirthDate()
     {
-        return $this->username;
-    }
-
-    /**
-     * Set password
-     *
-     * @param string $password
-     *
-     * @return Users
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return Users
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Set age
-     *
-     * @param integer $age
-     *
-     * @return Users
-     */
-    public function setAge($age)
-    {
-        $this->age = $age;
-
-        return $this;
-    }
-
-    /**
-     * Get age
-     *
-     * @return integer
-     */
-    public function getAge()
-    {
-        return $this->age;
+        return $this->birthDate;
     }
 
     /**
@@ -204,13 +94,37 @@ class Users extends BaseUser
     }
 
     /**
-     * Get userId
+     * Get enabled
      *
-     * @return integer
+     * @return boolean
      */
-    public function getUserId()
+    public function getEnabled()
     {
-        return $this->userId;
+        return $this->enabled;
+    }
+
+    /**
+     * Set fullName
+     *
+     * @param string $fullName
+     *
+     * @return Users
+     */
+    public function setFullName($fullName)
+    {
+        $this->fullName = $fullName;
+
+        return $this;
+    }
+
+    /**
+     * Get fullName
+     *
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->fullName;
     }
 
     /**

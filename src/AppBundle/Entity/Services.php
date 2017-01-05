@@ -22,11 +22,11 @@ class Services
     /**
      * @var integer
      *
-     * @ORM\Column(name="service_id", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $serviceId;
+    private $id;
 
 
 
@@ -55,12 +55,12 @@ class Services
     }
 
     /**
-     * Get serviceId
+     * Get id
      *
      * @return integer
      */
-    public function getServiceId()
+    public function getId()
     {
-        return $this->serviceId;
+        return $this->id;
     }
 }

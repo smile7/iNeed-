@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Certificates
  *
- * @ORM\Table(name="certificates", indexes={@ORM\Index(name="FK_certificates_user_id", columns={"user_id"})})
+ * @ORM\Table(name="certificates", indexes={@ORM\Index(name="FK_certificates_users_id", columns={"user_id"})})
  * @ORM\Entity
  */
 class Certificates
@@ -22,18 +22,18 @@ class Certificates
     /**
      * @var integer
      *
-     * @ORM\Column(name="certificate_id", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $certificateId;
+    private $id;
 
     /**
      * @var \AppBundle\Entity\Users
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Users")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      * })
      */
     private $user;
@@ -65,13 +65,13 @@ class Certificates
     }
 
     /**
-     * Get certificateId
+     * Get id
      *
      * @return integer
      */
-    public function getCertificateId()
+    public function getId()
     {
-        return $this->certificateId;
+        return $this->id;
     }
 
     /**

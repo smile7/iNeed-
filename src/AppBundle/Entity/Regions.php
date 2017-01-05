@@ -22,11 +22,11 @@ class Regions
     /**
      * @var integer
      *
-     * @ORM\Column(name="region_id", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $regionId;
+    private $id;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -69,13 +69,13 @@ class Regions
     }
 
     /**
-     * Get regionId
+     * Get id
      *
      * @return integer
      */
-    public function getRegionId()
+    public function getId()
     {
-        return $this->regionId;
+        return $this->id;
     }
 
     /**
