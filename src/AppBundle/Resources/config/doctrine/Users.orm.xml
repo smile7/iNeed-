@@ -9,51 +9,8 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="username" type="string" column="username" length="30" nullable="false">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="password" type="string" column="password" length="255" nullable="false">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="email" type="string" column="email" length="180" nullable="false">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
     <field name="birthDate" type="datetime" column="birth_date" nullable="true"/>
     <field name="description" type="text" column="description" length="65535" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="usernameCanonical" type="string" column="username_canonical" length="180" nullable="false">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="emailCanonical" type="string" column="email_canonical" length="180" nullable="false">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="enabled" type="boolean" column="enabled" nullable="false"/>
-    <field name="salt" type="string" column="salt" length="255" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="lastLogin" type="datetime" column="last_login" nullable="true"/>
-    <field name="confirmationToken" type="string" column="confirmation_token" length="180" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="passwordRequestedAt" type="datetime" column="password_requested_at" nullable="true"/>
-    <field name="roles" type="array" column="roles" nullable="false">
       <options>
         <option name="fixed"/>
       </options>
