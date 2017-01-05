@@ -1,6 +1,5 @@
 <?php
 // src/AppBundle/Entity/User.php
-
 namespace AppBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
@@ -10,40 +9,58 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
  */
-class Users extends BaseUser
-{
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
+class Users extends BaseUser {
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	protected $id;
+	
+	public function __construct() {
+		parent::__construct ();
+		// your own logic
+	}
 
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
     /**
      * @var \DateTime
      */
-    private $birthDate;
+	protected $birthDate;
 
     /**
      * @var string
      */
-    private $description;
+    protected $description;
 
     /**
      * @var string
      */
-    private $fullName;
+    protected $fullName;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $region;
+    protected $region;
 
+    /**
+     * @ORM\Column(name="facebook_id", type="string", length=255, nullable=true)
+     */
+    protected $facebook_id;
+    
+    /**
+     * @ORM\Column(name="facebook_access_token", type="string", length=255, nullable=true)
+     */
+    protected $facebook_access_token;
+    
+    /**
+     * @ORM\Column(name="google_id", type="string", length=255, nullable=true)
+     */
+    protected $google_id;
+    
+    /**
+     * @ORM\Column(name="google_access_token", type="string", length=255, nullable=true)
+     */
+    protected $google_access_token;
 
     /**
      * Set birthDate
@@ -91,16 +108,6 @@ class Users extends BaseUser
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Get enabled
-     *
-     * @return boolean
-     */
-    public function getEnabled()
-    {
-        return $this->enabled;
     }
 
     /**

@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Services
+ * NewBaseUser
  *
- * @ORM\Table(name="services")
+ * @ORM\Table(name="new_base_user", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_296F1DD6F85E0677", columns={"username"})})
  * @ORM\Entity
  */
-class Services
+class NewBaseUser
 {
     /**
      * @var integer
@@ -24,9 +24,9 @@ class Services
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     * @ORM\Column(name="username", type="string", length=30, nullable=false)
      */
-    private $name;
+    private $username;
 
 
 
@@ -41,26 +41,26 @@ class Services
     }
 
     /**
-     * Set name
+     * Set username
      *
-     * @param string $name
+     * @param string $username
      *
-     * @return Services
+     * @return NewBaseUser
      */
-    public function setName($name)
+    public function setUsername($username)
     {
-        $this->name = $name;
+        $this->username = $username;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get username
      *
      * @return string
      */
-    public function getName()
+    public function getUsername()
     {
-        return $this->name;
+        return $this->username;
     }
 }

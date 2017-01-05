@@ -10,42 +10,18 @@ class UserServices
     /**
      * @var integer
      */
-    private $price;
+    private $userId;
 
     /**
      * @var integer
      */
-    private $userId;
+    private $price;
 
     /**
      * @var \AppBundle\Entity\Services
      */
     private $service;
 
-
-    /**
-     * Set price
-     *
-     * @param integer $price
-     *
-     * @return UserServices
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
-
-        return $this;
-    }
-
-    /**
-     * Get price
-     *
-     * @return integer
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
 
     /**
      * Set userId
@@ -72,13 +48,37 @@ class UserServices
     }
 
     /**
+     * Set price
+     *
+     * @param integer $price
+     *
+     * @return UserServices
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return integer
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
      * Set service
      *
      * @param \AppBundle\Entity\Services $service
      *
      * @return UserServices
      */
-    public function setService(\AppBundle\Entity\Services $service)
+    public function setService(\AppBundle\Entity\Services $service = null)
     {
         $this->service = $service;
 
