@@ -1,5 +1,134 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-   <h1>iNeed</h1>
+
+
+<div class="container">
+	<!-- Introduction Row -->
+	<div class="row">
+		<div>
+			<h1 class="page-header text-center">Търси Обяви</h1>
+
+			<form class="adv-form text-center">
+				<div class="form-wrapper">
+				<div class="search-boxes-wrapper">
+				<div class="ad-type">
+				
+    			<div class="col-md-6">
+    			<div class="radio">
+      				<label><input type="radio" name="optradio">обяви за работа</label>
+    			</div>
+    			</div>
+    			
+    			<div class="col-md-6">
+    			<div class="radio">
+      				<label><input type="radio" name="optradio">хора, търсещи работа</label>
+    			</div>
+    			</div>
+    			</div>
+    			<br />
+    			
+    			<div class="col-md-6">
+    			<label for="region" class="search-text search-region">Област</label>
+    			</div>
+    			<div class="col-md-6">
+    			<select class="selectpicker" title="избери">
+    				<option value="София">София</option>
+    				<option value="Пловдив">Пловдив</option>
+    			</select>
+    			</div>
+    			<br />
+    			
+    			<div class="col-md-6">
+    			<label for="region" class="search-text search-municipality">Община</label>
+    			</div>
+    			<div class="col-md-6">
+    			<select class="selectpicker" title="избери">
+    				<option value="Джурово">Джурово</option>
+    				<option value="Драганово">Драганово</option>
+    			</select>
+    			</div>	
+    			<br />
+    			
+    			<div class="col-md-6">
+    			<label for="job-type" class="search-text search-work">Тип работа</label>
+    			</div>
+    			<div class="col-md-6">
+    			<select class="selectpicker" title="избери" data-actions-box="true" multiple>
+    				<optgroup label="Земеделска работа">
+    					<option value="Гледане на крави">Гледане на крави</option>
+    					<option value="Ремонт на покрив">Ремонт на покрив</option>
+    					<option value="Цепене на дърва">Цепене на дърва</option>
+    				</optgroup>
+    				<optgroup label="Домашна работа">
+    					<option value="Разхождане на мишле">Разхождане на мишле</option>
+    					<option value="Пране на ръка">Пране на ръка</option>
+    					<option value="Чистене">Чистене</option>
+    					<option value="Плетене">Плетене</option>
+    				</optgroup>
+    				<optgroup label="Учебни дейности">
+    					<option value="Шахмат">Шахмат</option>
+    					<option value="Ръчен труд">Ръчен труд</option>
+    					<option value="Уроци за живота">Уроци за живота</option>
+    				</optgroup>
+    			</select>
+    			</div>
+    			</div>
+    			<button type="button" class="btn btn-primary btn-lg btn-block btn-search">Виж Резултати</button>
+    			</div>
+  			</form>
+  			
+			<!-- SEARCH FORM -->
+			<!-- 
+			<div class="col-md-12">
+				<div class="input-group" id="adv-search">
+					<input type="text" class="form-control" placeholder="Кого търсиш?" />
+					<div class="input-group-btn">
+						<div class="btn-group" role="group">
+							<div class="dropdown dropdown-lg">
+								<button type="button" class="btn btn-default dropdown-toggle"
+									data-toggle="dropdown" aria-expanded="false">
+									<span class="caret"></span>
+								</button>
+								<div class="dropdown-menu dropdown-menu-right" role="menu">
+									<form class="form-horizontal" role="form">
+										<div class="form-group">
+											<label for="filter">Филтър</label> <select
+												class="form-control">
+												<option value="0" selected>All Snippets</option>
+												<option value="1">Featured</option>
+												<option value="2">Most popular</option>
+												<option value="3">Top rated</option>
+												<option value="4">Most commented</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="contain">Author</label> <input
+												class="form-control" type="text" />
+										</div>
+										<div class="form-group">
+											<label for="contain">Contains the words</label> <input
+												class="form-control" type="text" />
+										</div>
+										<button type="submit" class="btn btn-primary">
+											<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+										</button>
+									</form>
+								</div>
+							</div>
+							<button type="button" class="btn btn-primary">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			-->
+		</div>
+		
+		<!-- END OF SEARCH FORM -->
+	</div>
+</div>
+
+
 {% endblock %}

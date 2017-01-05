@@ -2,8 +2,78 @@ body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+nav {
+	font-size: 16px;
+	margin-bottom: 30px;
+}
 
+.navbar-default .navbar-nav>li>a {
+	color: #337AB7;
+}
 
+.navbar-default .navbar-nav>li>a:hover {
+	color: #286090;
+}
+
+h1.page-header {
+	margin-top: 30px;
+}
+
+.adv-form, footer .container .row {
+	border-right: 1px dotted #77A1E3;
+	border-left: 1px dotted #77A1E3;
+}
+
+.adv-form .radio {
+	display: inline;
+	margin: 0 40px;
+	font-size: 20px;
+}
+
+.adv-form .radio:hover {
+	border-bottom:1px solid;
+}
+
+.search-text {
+	font-size: 19px;
+	font-weight: normal;
+	left: 0;
+	margin: 48px 0 0 61px;
+	position: absolute;
+}
+
+.bootstrap-select.btn-group {
+	margin: 45px -45px 0 0;
+}
+
+.btn-search {
+	font-weight: bold;
+	margin: 0 auto;
+	width: 40%;
+}
+
+.search-boxes-wrapper {
+	margin-bottom: 67px;
+	overflow: hidden;
+}
+
+.form-wrapper {
+	margin: 0 auto;
+	position: relative;
+	width: 50%;
+}
+
+.img-center {
+	margin: 0 auto;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.navbar-fixed-bottom {
+	margin-bottom: 15px;
+}
 
 
 .dropdown.dropdown-lg .dropdown-menu {
@@ -45,16 +115,4 @@ body {
     .dropdown.dropdown-lg .dropdown-menu {
         min-width: 500px;
     }
-}
-
-
-
-
-
-.img-center {
-	margin: 0 auto;
-}
-
-footer {
-    margin: 50px 0;
 }
