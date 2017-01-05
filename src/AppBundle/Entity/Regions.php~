@@ -22,11 +22,11 @@ class Regions
     /**
      * @var integer
      *
-     * @ORM\Column(name="region_id", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $regionId;
+    private $id;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -43,5 +43,72 @@ class Regions
         $this->user = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-}
 
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Regions
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Add user
+     *
+     * @param \AppBundle\Entity\Users $user
+     *
+     * @return Regions
+     */
+    public function addUser(\AppBundle\Entity\Users $user)
+    {
+        $this->user[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \AppBundle\Entity\Users $user
+     */
+    public function removeUser(\AppBundle\Entity\Users $user)
+    {
+        $this->user->removeElement($user);
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+}

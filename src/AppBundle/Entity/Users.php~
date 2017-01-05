@@ -1,83 +1,27 @@
 <?php
+// src/AppBundle/Entity/User.php
 
 namespace AppBundle\Entity;
 
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Users
- *
- * @ORM\Table(name="users")
  * @ORM\Entity
+ * @ORM\Table(name="fos_user")
  */
-class Users
+class Users extends BaseUser
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="username", type="string", length=255, nullable=false)
-     */
-    private $username;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=255, nullable=false)
-     */
-    private $password;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255, nullable=false)
-     */
-    private $email;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="age", type="integer", nullable=true)
-     */
-    private $age;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="description", type="string", length=255, nullable=true)
-     */
-    private $description;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="user_id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $userId;
+    protected $id;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Regions", inversedBy="user")
-     * @ORM\JoinTable(name="user_regions",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="region_id", referencedColumnName="region_id")
-     *   }
-     * )
-     */
-    private $region;
-
-    /**
-     * Constructor
-     */
     public function __construct()
     {
-        $this->region = new \Doctrine\Common\Collections\ArrayCollection();
+        parent::__construct();
+        // your own logic
     }
-
 }
-
