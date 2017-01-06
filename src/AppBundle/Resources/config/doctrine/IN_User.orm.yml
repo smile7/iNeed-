@@ -10,7 +10,7 @@ AppBundle\Entity\IN_User:
                 strategy: AUTO
     fields:
         bornYear:
-            type: datetime
+            type: date
             column: born_year
         fullName:
             type: string
