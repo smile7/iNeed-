@@ -35,23 +35,23 @@ Database
 edit `app/config/parameters.yml`
 
 
-View Symfony commmands
+Useful commmands
 ========================
 
-```shell
-php bin/console list
-```
-
-Run the web server
-------------------------
+* run web server
 
 ```shell
 npm run server
 ```
 
-PHP Unit Testing
-========================
+* execute PHP Unit Tests
 
 ```shell
 npm test
+```
+
+* update DB schema
+
+```shell
+npm run schema:update
 ```

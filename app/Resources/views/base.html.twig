@@ -7,11 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
+  
   <title>iNeed!</title>
+  
   <!-- Bootstrap Core CSS -->
   <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Custom CSS -->
-  <link href="css/round-about.css" rel="stylesheet">
+  <link href="css/theme-style.css" rel="stylesheet">
+  
+  <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+  
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -21,6 +26,8 @@
 </head>
 
 <body>
+  <div class="wrapper">
+  
   <!-- Navigation -->
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
@@ -32,12 +39,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{path('home')}}">
-                  <img src="imgs/logo.png" alt="logo" width="200" height="35"/>
+                <a class="navbar-brand navbar-left" href="{{path('home')}}">
+                	<img src="imgs/iNeed-Midnight.png" alt="logo" width="150" height="53"/>
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- 
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="{{path('home')}}">Home</a>
@@ -49,86 +57,71 @@
                         <a href="{{path('about-us')}}">About Us</a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="{{path('fos_user_registration_register')}}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                  <li><a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                -->
+                <ul class="nav navbar-nav nav-tabs navbar-right">
+                  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Вход</a></li>
+                  <li class="dropdown">
+                  	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Профил</a>
+                  		<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+      						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Редактиране на профил</a></li>
+      						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Нещо друго?</a></li>
+      						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Някой?</a></li>
+      						<li role="presentation" class="divider"></li>
+      						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Изход</a></li>
+    					</ul>
+                  </div>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+            <!-- /.navbar-collapse -->            
         </div>
         <!-- /.container -->
     </nav>
   <!-- Page Content -->
   
-  <div class="container">
-    <!-- Introduction Row -->
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 class="page-header">Търси</h1>
-        
-        <!-- SEARCH FORM -->
-        <!--<div class="container">
-          <div class="row">-->
-            <div class="col-md-12">
-              <div class="input-group" id="adv-search">
-                <input type="text" class="form-control" placeholder="Кого търсиш?" />
-                <div class="input-group-btn">
-                  <div class="btn-group" role="group">
-                    <div class="dropdown dropdown-lg">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <span class="caret"></span>
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-right" role="menu">
-                        <form class="form-horizontal" role="form">
-                          <div class="form-group">
-                            <label for="filter">Филтър</label>
-                            <select class="form-control">
-                              <option value="0" selected>All Snippets</option>
-                              <option value="1">Featured</option>
-                              <option value="2">Most popular</option>
-                              <option value="3">Top rated</option>
-                              <option value="4">Most commented</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="contain">Author</label>
-                            <input class="form-control" type="text" /> </div>
-                          <div class="form-group">
-                            <label for="contain">Contains the words</label>
-                            <input class="form-control" type="text" /> </div>
-                          <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                        </form>
-                      </div>
-                    </div>
-                    <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <!--</div>
-      </div>-->
-      <!-- END OF SEARCH FORM -->
-      {% block body %}{% endblock %}
-    </div>
-  </div>
-  <hr>
+  {% block body %}{% endblock %}
+  
+  <!-- 
+  <article>
+  	<div class="paid-membership-long-ad"">
+  		
+  	</div>
+  </article>
+  -->
+  
   <!-- Footer -->
-  <footer>
-    <div class="row">
-      <div class="col-lg-12">
-        <p>Copyright &copy; iNeed! 2017</p>
+  <footer class="footer">
+  <div class="container">
+    <div class="row wrapper">
+      <div class="col-lg-4">
+        <p class="text-muted">&copy; iNeeed! 2016 - {{ 'now'|date('Y') }}<br />
+        Всички права запазени.</p>
       </div>
-      <!-- /.col-lg-12 -->
+      <!-- /.col-lg-6 -->
+      
+      <div class="col-lg-4 text-center">
+      	<img src="imgs/iNeed-Midnight.png" alt="logo" width="80" height="30" />
+      </div>
+      <div class="col-lg-4 text-right">
+      	<a href="#">Въпроси и отговори</a><br/>
+      	<a href="#">Изпратете запитване</a>
+      </div>
+      <!-- /.col-lg-6 -->
     </div>
     <!-- /.row -->
-  </footer>
   </div>
-  <!-- /.container -->
+  </footer>
+  <!-- /.footer -->
+  
+  </div>
+  <!-- /.wrapper -->
+  
   <!-- jQuery -->
   <script src="vendor/jquery/dist/jquery.min.js"></script>
   <!-- Bootstrap Core JavaScript -->
-  <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>  
+  <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+  <script src="vendor/bootstrap-select/dist/js/i18n/defaults-bg_BG.js"></script>
+  <script src="js/select-style.js"></script>
 </body>
 
 </html>

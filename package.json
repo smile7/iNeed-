@@ -8,6 +8,8 @@
   },
   "scripts": {
     "server": "php bin/console server:run",
+    "cache:clear": "php bin/console cache:clear",
+    "schema:update": "php bin/console doctrine:schema:update --force",
     "test": "php ./vendor/phpunit/phpunit/phpunit"
   },
   "repository": {

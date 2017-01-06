@@ -17,6 +17,5 @@
 /vendor/
 /web/bundles/
 /web/vendor/
-.buildpath
-.project
+/.project
 /.settings/
