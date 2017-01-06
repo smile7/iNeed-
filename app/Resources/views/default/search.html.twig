@@ -1,55 +1,118 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-   <h1>Results: </h1>
-   <div class="container">
+<div class="container search-results">
+	<h1>Показвани резултати за:</h1>
+	<ul class="results-for-list">
+		<li><span class="search-city">обяви за работа</span></li>
+		<li>град: <span class="search-city">Всички</span></li>
+		<li>тип работа: <span class="search-type">Всички</span></li>
+	</ul>
+	<hr>
 
-        <!-- Team Members Row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Our Team</h2>
-            </div>
-            <div class="col-lg-6 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-6 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-6 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-6 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-6 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-6 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-        </div>
-{% endblock %}
+	<!-- Search Results -->
+	<div class="row">
+		<a href="#"class="search-res-form">
+		<div class="col-lg-6 col-sm-6 text-left person-form">
+			<img class="img-thumbnail img-responsive img-center img-person"
+				src="/imgs/tisho2.jpg" alt="person-picture" />
+			<div class="person-text">
+				<h3>
+					Тихомир Янев
+				</h3>
+				<h4>Варна</h4>
+				<ul class="search-res-capabilities">
+					<li>Сглобяване на чиркуляци</li>
+					<li>Уроци по гребане</li>
+				</ul>
+			</div>
+		</div>
+		</a>
+		
+		<a href="#"class="search-res-form">
+		<div class="col-lg-6 col-sm-6 text-left person-form">
+			<img class="img-thumbnail img-responsive img-center img-person"
+				src="imgs/mamma.jpg" alt="person-picture" />
+			<div class="person-text">
+				<h3>
+					Силвена Митевa
+				</h3>
+				<h4>Русее</h4>
+				<ul class="search-res-capabilities">
+					<li>Цепене на дърва</li>
+					<li>Дъвчене на дъвка без балони</li>
+				</ul>
+			</div>
+		</div>
+		</a>
+		
+		<a href="#"class="search-res-form">
+		<div class="col-lg-6 col-sm-6 text-left person-form">
+			<img class="img-thumbnail img-responsive img-center img-person"
+				src="imgs/tedi.jpg" alt="person-picture" />
+			<div class="person-text">
+				<h3>
+					Теодора Василевa
+				</h3>
+				<h4>Оряхово</h4>
+				<ul class="search-res-capabilities">
+					<li>Къдрене на коса</li>
+					<li>Пиене на кафе</li>
+					<li>Спасяване на света</li>
+				</ul>
+			</div>
+		</div>
+		</a>
+		
+		<a href="#"class="search-res-form">
+		<div class="col-lg-6 col-sm-6 text-left person-form">
+			<img class="img-thumbnail img-responsive img-center img-person"
+				src="imgs/pacho.jpg" alt="person-picture" />
+			<div class="person-text">
+				<h3>
+					Пламен Марков
+				</h3>
+				<h4>ЯмБол</h4>
+				<ul class="search-res-capabilities">
+					<li>Изпробване на нови хапчета</li>
+					<li>Разсмиване на деца</li>
+				</ul>
+			</div>
+		</div>
+		</a>
+		
+		<a href="#"class="search-res-form">
+		<div class="col-lg-6 col-sm-6 text-left person-form">
+			<img class="img-thumbnail img-responsive img-center img-person"
+				src="imgs/old.jpg" alt="person-picture" />
+			<div class="person-text">
+				<h3>
+					Лавандула Църпъркова
+				</h3>
+				<h4>Горен Каспичан</h4>
+				<ul class="search-res-capabilities">
+					<li>Биене на кучето</li>
+					<li>Мътене на яйца</li>
+				</ul>
+			</div>
+		</div>
+		</a>
+		
+		<a href="#"class="search-res-form">
+		<div class="col-lg-6 col-sm-6 text-left person-form">
+			<img class="img-thumbnail img-responsive img-center img-person"
+				src="imgs/smiles.jpg" alt="person-picture" />
+			<div class="person-text">
+				<h3>
+					Ластик Косов
+				</h3>
+				<h4>Лапландия</h4>
+				<ul class="search-res-capabilities">
+					<li>Отвличане</li>
+					<li>Грабеж</li>
+				</ul>
+			</div>
+		</div>
+		</a>
+	</div>
+	{% endblock %}

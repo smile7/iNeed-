@@ -40,7 +40,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand navbar-left" href="{{path('home')}}">
-                	<img src="imgs/logo-text.png" alt="logo" width="150" height="23"/>
+                	<img src="imgs/iNeed-Midnight.png" alt="logo" width="150" height="53"/>
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -58,14 +58,21 @@
                     </li>
                 </ul>
                 -->
-                <ul class="nav navbar-nav navbar-right">
-                  <!--
-                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                  -->
+                <ul class="nav navbar-nav nav-tabs navbar-right">
                   <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Вход</a></li>
+                  <li class="dropdown">
+                  	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Профил</a>
+                  		<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+      						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Редактиране на профил</a></li>
+      						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Нещо друго?</a></li>
+      						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Някой?</a></li>
+      						<li role="presentation" class="divider"></li>
+      						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Изход</a></li>
+    					</ul>
+                  </div>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+            <!-- /.navbar-collapse -->            
         </div>
         <!-- /.container -->
     </nav>
@@ -73,9 +80,16 @@
   
   {% block body %}{% endblock %}
   
+  <!-- 
+  <article>
+  	<div class="paid-membership-long-ad"">
+  		
+  	</div>
+  </article>
+  -->
+  
   <!-- Footer -->
-  <footer class="footer navbar-fixed-bottom">
-  <hr>
+  <footer class="footer">
   <div class="container">
     <div class="row wrapper">
       <div class="col-lg-4">
@@ -85,7 +99,7 @@
       <!-- /.col-lg-6 -->
       
       <div class="col-lg-4 text-center">
-      	<img src="imgs/logo.png" alt="logo" width="50" height="40" />
+      	<img src="imgs/iNeed-Midnight.png" alt="logo" width="80" height="30" />
       </div>
       <div class="col-lg-4 text-right">
       	<a href="#">Въпроси и отговори</a><br/>
