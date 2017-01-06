@@ -13,6 +13,7 @@ class FOSUBUserProvider extends BaseClass
      */
     public function connect(UserInterface $user, UserResponseInterface $response)
     {
+    	error_log("Oracle database not available!", 0);
         $property = $this->getProperty($response);
         $username = $response->getUsername();
 
@@ -42,6 +43,7 @@ class FOSUBUserProvider extends BaseClass
      */
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)
     {
+    	error_log("Oracle database not available!", 0);
         $username = $response->getUsername();
         $user = $this->userManager->findUserBy(array($this->getProperty($response) => $username));
         //when the user is registrating
