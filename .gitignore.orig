@@ -17,5 +17,11 @@
 /vendor/
 /web/bundles/
 /web/vendor/
+<<<<<<< HEAD
+.buildpath
+.project
+/.settings/
+=======
 /.project
 /.settings/
+>>>>>>> refs/heads/master

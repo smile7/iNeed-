@@ -76,9 +76,8 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: AppBundle\Entity\Users
-    registration:
-        form:
-            type: AppBundle\Form\RegistrationType
+<<<<<<< HEAD
+
 hwi_oauth:
     #this is a custom user provider, created from FOSUBUserProvider - will manage the 
     #automatic user registration on your site, with data from the provider (facebook. google, etc.)
@@ -104,3 +103,8 @@ hwi_oauth:
             client_id:           "%google_app_id%"
             client_secret:       "%google_app_secret%"
             scope:               "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
+=======
+    registration:
+        form:
+            type: AppBundle\Form\RegistrationType
+>>>>>>> refs/heads/master

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,6 +6,9 @@
     </head>
     <body>
         <div>
+=======
+<div>
+>>>>>>> refs/heads/master
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
                 <a href="{{ path('fos_user_security_logout') }}">
@@ -15,6 +19,7 @@
             {% endif %}
         </div>
 
+<<<<<<< HEAD
         {% if app.request.hasPreviousSession %}
             {% for type, messages in app.session.flashbag.all() %}
                 {% for message in messages %}
@@ -24,10 +29,22 @@
                 {% endfor %}
             {% endfor %}
         {% endif %}
+=======
+        {% for type, messages in app.session.flashBag.all %}
+            {% for message in messages %}
+                <div class="{{ type }}">
+                    {{ message|trans({}, 'FOSUserBundle') }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+>>>>>>> refs/heads/master
 
         <div>
             {% block fos_user_content %}
             {% endblock fos_user_content %}
         </div>
+<<<<<<< HEAD
     </body>
 </html>
+=======
+>>>>>>> refs/heads/master
