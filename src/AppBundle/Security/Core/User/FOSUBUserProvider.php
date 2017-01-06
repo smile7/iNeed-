@@ -12,7 +12,7 @@ class FOSUBUserProvider extends BaseClass
      * {@inheritDoc}
      */
     public function connect(UserInterface $user, UserResponseInterface $response)
-    {
+    { error_log(1);
         $property = $this->getProperty($response);
         $username = $response->getUsername();
 

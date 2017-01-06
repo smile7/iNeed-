@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * InUser
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="in_user", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_A728E92D92FC23A8", columns={"username_canonical"}), @ORM\UniqueConstraint(name="UNIQ_A728E92DA0D96FBF", columns={"email_canonical"}), @ORM\UniqueConstraint(name="UNIQ_A728E92DC05FB297", columns={"confirmation_token"})})
  * @ORM\Entity
  */
-class InUser
+class InUser extends BaseUser
 {
     /**
      * @var integer
@@ -19,99 +20,141 @@ class InUser
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=180, nullable=false)
      */
-    private $username;
+    protected $username;
 
     /**
      * @var string
      *
      * @ORM\Column(name="username_canonical", type="string", length=180, nullable=false)
      */
-    private $usernameCanonical;
+    protected $usernameCanonical;
 
     /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=180, nullable=false)
      */
-    private $email;
+    protected $email;
 
     /**
      * @var string
      *
      * @ORM\Column(name="email_canonical", type="string", length=180, nullable=false)
      */
-    private $emailCanonical;
+    protected $emailCanonical;
 
     /**
      * @var boolean
      *
      * @ORM\Column(name="enabled", type="boolean", nullable=false)
      */
-    private $enabled;
+    protected $enabled;
 
     /**
      * @var string
      *
      * @ORM\Column(name="salt", type="string", length=255, nullable=true)
      */
-    private $salt;
+    protected $salt;
 
     /**
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=255, nullable=false)
      */
-    private $password;
+    protected $password;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="last_login", type="datetime", nullable=true)
      */
-    private $lastLogin;
+    protected $lastLogin;
 
     /**
      * @var string
      *
      * @ORM\Column(name="confirmation_token", type="string", length=180, nullable=true)
      */
-    private $confirmationToken;
+    protected $confirmationToken;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="password_requested_at", type="datetime", nullable=true)
      */
-    private $passwordRequestedAt;
+    protected $passwordRequestedAt;
 
     /**
      * @var array
      *
      * @ORM\Column(name="roles", type="array", nullable=false)
      */
-    private $roles;
+    protected $roles;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="born_year", type="datetime", nullable=false)
+     * @ORM\Column(name="born_year", type="date", nullable=false)
      */
-    private $bornYear;
+    protected $bornYear;
 
     /**
      * @var string
      *
      * @ORM\Column(name="full_name", type="string", length=40, nullable=false)
      */
-    private $fullName;
+    protected $fullName;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\InLocation", inversedBy="user")
+     * @ORM\JoinTable(name="in_user_location",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="location_id", referencedColumnName="id")
+     *   }
+     * )
+     */
+    protected $location;
+
+    /**
+     * @ORM\Column(name="facebook_id", type="string", length=255, nullable=true)
+     */
+    protected $facebook_id;
+    
+    /**
+     * @ORM\Column(name="facebook_access_token", type="string", length=255, nullable=true)
+     */
+    protected $facebook_access_token;
+    
+    /**
+     * @ORM\Column(name="google_id", type="string", length=255, nullable=true)
+     */
+    protected $google_id;
+    
+    /**
+     * @ORM\Column(name="google_access_token", type="string", length=255, nullable=true)
+     */
+    protected $google_access_token;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
 
     /**
@@ -299,7 +342,7 @@ class InUser
      *
      * @return InUser
      */
-    public function setLastLogin($lastLogin)
+    public function setLastLogin(\DateTime $lastLogin = NULL)
     {
         $this->lastLogin = $lastLogin;
 
@@ -347,7 +390,7 @@ class InUser
      *
      * @return InUser
      */
-    public function setPasswordRequestedAt($passwordRequestedAt)
+    public function setPasswordRequestedAt(\DateTime $passwordRequestedAt = NULL)
     {
         $this->passwordRequestedAt = $passwordRequestedAt;
 
@@ -371,7 +414,7 @@ class InUser
      *
      * @return InUser
      */
-    public function setRoles($roles)
+    public function setRoles(array $roles)
     {
         $this->roles = $roles;
 
@@ -434,5 +477,135 @@ class InUser
     public function getFullName()
     {
         return $this->fullName;
+    }
+
+    /**
+     * Add location
+     *
+     * @param \AppBundle\Entity\InLocation $location
+     *
+     * @return InUser
+     */
+    public function addLocation(\AppBundle\Entity\InLocation $location)
+    {
+        $this->location[] = $location;
+
+        return $this;
+    }
+
+    /**
+     * Remove location
+     *
+     * @param \AppBundle\Entity\InLocation $location
+     */
+    public function removeLocation(\AppBundle\Entity\InLocation $location)
+    {
+        $this->location->removeElement($location);
+    }
+
+    /**
+     * Get location
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * Set facebookId
+     *
+     * @param string $facebookId
+     *
+     * @return InUser
+     */
+    public function setFacebookId($facebookId)
+    {
+        $this->facebook_id = $facebookId;
+
+        return $this;
+    }
+
+    /**
+     * Get facebookId
+     *
+     * @return string
+     */
+    public function getFacebookId()
+    {
+        return $this->facebook_id;
+    }
+
+    /**
+     * Set facebookAccessToken
+     *
+     * @param string $facebookAccessToken
+     *
+     * @return InUser
+     */
+    public function setFacebookAccessToken($facebookAccessToken)
+    {
+        $this->facebook_access_token = $facebookAccessToken;
+
+        return $this;
+    }
+
+    /**
+     * Get facebookAccessToken
+     *
+     * @return string
+     */
+    public function getFacebookAccessToken()
+    {
+        return $this->facebook_access_token;
+    }
+
+    /**
+     * Set googleId
+     *
+     * @param string $googleId
+     *
+     * @return InUser
+     */
+    public function setGoogleId($googleId)
+    {
+        $this->google_id = $googleId;
+
+        return $this;
+    }
+
+    /**
+     * Get googleId
+     *
+     * @return string
+     */
+    public function getGoogleId()
+    {
+        return $this->google_id;
+    }
+
+    /**
+     * Set googleAccessToken
+     *
+     * @param string $googleAccessToken
+     *
+     * @return InUser
+     */
+    public function setGoogleAccessToken($googleAccessToken)
+    {
+        $this->google_access_token = $googleAccessToken;
+
+        return $this;
+    }
+
+    /**
+     * Get googleAccessToken
+     *
+     * @return string
+     */
+    public function getGoogleAccessToken()
+    {
+        return $this->google_access_token;
     }
 }

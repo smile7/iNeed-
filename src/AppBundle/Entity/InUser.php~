@@ -101,7 +101,7 @@ class InUser
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="born_year", type="datetime", nullable=false)
+     * @ORM\Column(name="born_year", type="date", nullable=false)
      */
     private $bornYear;
 
@@ -112,6 +112,48 @@ class InUser
      */
     private $fullName;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\InLocation", inversedBy="user")
+     * @ORM\JoinTable(name="in_user_location",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="location_id", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $location;
+
+    /**
+     * @ORM\Column(name="facebook_id", type="string", length=255, nullable=true)
+     */
+    protected $facebook_id;
+    
+    /**
+     * @ORM\Column(name="facebook_access_token", type="string", length=255, nullable=true)
+     */
+    protected $facebook_access_token;
+    
+    /**
+     * @ORM\Column(name="google_id", type="string", length=255, nullable=true)
+     */
+    protected $google_id;
+    
+    /**
+     * @ORM\Column(name="google_access_token", type="string", length=255, nullable=true)
+     */
+    protected $google_access_token;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->location = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 
     /**
@@ -434,5 +476,39 @@ class InUser
     public function getFullName()
     {
         return $this->fullName;
+    }
+
+    /**
+     * Add location
+     *
+     * @param \AppBundle\Entity\InLocation $location
+     *
+     * @return InUser
+     */
+    public function addLocation(\AppBundle\Entity\InLocation $location)
+    {
+        $this->location[] = $location;
+
+        return $this;
+    }
+
+    /**
+     * Remove location
+     *
+     * @param \AppBundle\Entity\InLocation $location
+     */
+    public function removeLocation(\AppBundle\Entity\InLocation $location)
+    {
+        $this->location->removeElement($location);
+    }
+
+    /**
+     * Get location
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLocation()
+    {
+        return $this->location;
     }
 }

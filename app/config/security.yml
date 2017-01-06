@@ -22,11 +22,13 @@ security:
                 default_target_path: /
             oauth:
                 resource_owners:
-                    facebook:           "/login/check-facebook"
-                    google:             "/login/check-google"
-                login_path:        /login
+                    facebook:           "/loginf/check-facebook"
+                    google:             "/loginf/check-google"
+                login_path:        /loginf
                 use_forward:        false
-                failure_path:      /login
+                failure_path:      /loginf
+                check_path: /loginf/check-facebook
+                provider: fos_userbundle
 
                 oauth_user_provider:
                     #this is a custom user provider, created from FOSUBUserProvider - will manage the

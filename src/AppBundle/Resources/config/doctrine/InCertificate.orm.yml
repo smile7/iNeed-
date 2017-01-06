@@ -1,33 +1,35 @@
-AppBundle\Entity\UserServices:
+AppBundle\Entity\InCertificate:
     type: entity
-    table: user_services
+    table: in_certificate
     indexes:
-        FK_user_services_service_id:
+        user_id:
             columns:
-                - service_id
+                - user_id
     id:
-        userId:
+        id:
             type: integer
             nullable: false
             options:
                 unsigned: false
             id: true
-            column: user_id
+            generator:
+                strategy: IDENTITY
     fields:
-        price:
-            type: integer
-            nullable: true
+        title:
+            type: string
+            nullable: false
+            length: 255
             options:
-                unsigned: false
-    oneToOne:
-        service:
-            targetEntity: Services
+                fixed: false
+    manyToOne:
+        user:
+            targetEntity: InUser
             cascade: {  }
             fetch: LAZY
             mappedBy: null
             inversedBy: null
             joinColumns:
-                service_id:
+                user_id:
                     referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

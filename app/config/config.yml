@@ -73,7 +73,7 @@ swiftmailer:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
-    user_class: AppBundle\Entity\Users
+    user_class: AppBundle\Entity\InUser
 
 hwi_oauth:
     #this is a custom user provider, created from FOSUBUserProvider - will manage the 
@@ -94,7 +94,11 @@ hwi_oauth:
             type:                facebook
             client_id:           "%facebook_app_id%"
             client_secret:       "%facebook_app_secret%"
-            scope:               "email"
+            scope:               "email, public_profile"
+            paths:
+                email: email
+            options:
+                display: page
         google:
             type:                google
             client_id:           "%google_app_id%"

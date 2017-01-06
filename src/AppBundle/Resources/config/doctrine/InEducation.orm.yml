@@ -1,8 +1,11 @@
-AppBundle\Entity\Certificates:
+AppBundle\Entity\InEducation:
     type: entity
-    table: certificates
+    table: in_education
     indexes:
-        FK_certificates_users_id:
+        user_id:
+            columns:
+                - user_id
+        user_id_2:
             columns:
                 - user_id
     id:
@@ -23,7 +26,7 @@ AppBundle\Entity\Certificates:
                 fixed: false
     manyToOne:
         user:
-            targetEntity: Users
+            targetEntity: InUser
             cascade: {  }
             fetch: LAZY
             mappedBy: null

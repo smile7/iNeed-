@@ -1,0 +1,62 @@
+AppBundle\Entity\InUserOffer:
+    type: entity
+    table: in_user_offer
+    indexes:
+        FK_in_user_id:
+            columns:
+                - user_id
+        FK_in_service_id:
+            columns:
+                - service_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        minPrice:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: min_price
+        maxPrice:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: max_price
+        startDate:
+            type: date
+            nullable: true
+            column: start_date
+        enDate:
+            type: date
+            nullable: true
+            column: en_date
+    manyToOne:
+        service:
+            targetEntity: InService
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                service_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        user:
+            targetEntity: InUser
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

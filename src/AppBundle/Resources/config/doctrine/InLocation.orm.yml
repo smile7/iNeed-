@@ -1,6 +1,10 @@
-AppBundle\Entity\Regions:
+AppBundle\Entity\InLocation:
     type: entity
-    table: regions
+    table: in_location
+    uniqueConstraints:
+        UNIQ_1967F5972D5B0234:
+            columns:
+                - city
     id:
         id:
             type: integer
@@ -11,18 +15,18 @@ AppBundle\Entity\Regions:
             generator:
                 strategy: IDENTITY
     fields:
-        name:
+        city:
             type: string
             nullable: false
-            length: 255
+            length: 40
             options:
                 fixed: false
     manyToMany:
         user:
-            targetEntity: Users
+            targetEntity: InUser
             cascade: {  }
             fetch: LAZY
-            mappedBy: region
+            mappedBy: location
             inversedBy: null
             joinTable: null
             orderBy: null

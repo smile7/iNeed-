@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Certificates
+ * InEducation
  *
- * @ORM\Table(name="certificates", indexes={@ORM\Index(name="FK_certificates_users_id", columns={"user_id"})})
+ * @ORM\Table(name="in_education", indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="user_id_2", columns={"user_id"})})
  * @ORM\Entity
  */
-class Certificates
+class InEducation
 {
     /**
      * @var integer
@@ -29,9 +29,9 @@ class Certificates
     private $name;
 
     /**
-     * @var \AppBundle\Entity\Users
+     * @var \AppBundle\Entity\InUser
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Users")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\InUser")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      * })
@@ -55,7 +55,7 @@ class Certificates
      *
      * @param string $name
      *
-     * @return Certificates
+     * @return InEducation
      */
     public function setName($name)
     {
@@ -77,11 +77,11 @@ class Certificates
     /**
      * Set user
      *
-     * @param \AppBundle\Entity\Users $user
+     * @param \AppBundle\Entity\InUser $user
      *
-     * @return Certificates
+     * @return InEducation
      */
-    public function setUser(\AppBundle\Entity\Users $user = null)
+    public function setUser(\AppBundle\Entity\InUser $user = null)
     {
         $this->user = $user;
 
@@ -91,7 +91,7 @@ class Certificates
     /**
      * Get user
      *
-     * @return \AppBundle\Entity\Users
+     * @return \AppBundle\Entity\InUser
      */
     public function getUser()
     {

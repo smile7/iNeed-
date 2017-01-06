@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Regions
+ * InLocation
  *
- * @ORM\Table(name="regions")
+ * @ORM\Table(name="in_location", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_1967F5972D5B0234", columns={"city"})})
  * @ORM\Entity
  */
-class Regions
+class InLocation
 {
     /**
      * @var integer
@@ -24,14 +24,14 @@ class Regions
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     * @ORM\Column(name="city", type="string", length=40, nullable=false)
      */
-    private $name;
+    private $city;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Users", mappedBy="region")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\InUser", mappedBy="location")
      */
     private $user;
 
@@ -55,37 +55,37 @@ class Regions
     }
 
     /**
-     * Set name
+     * Set city
      *
-     * @param string $name
+     * @param string $city
      *
-     * @return Regions
+     * @return InLocation
      */
-    public function setName($name)
+    public function setCity($city)
     {
-        $this->name = $name;
+        $this->city = $city;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get city
      *
      * @return string
      */
-    public function getName()
+    public function getCity()
     {
-        return $this->name;
+        return $this->city;
     }
 
     /**
      * Add user
      *
-     * @param \AppBundle\Entity\Users $user
+     * @param \AppBundle\Entity\InUser $user
      *
-     * @return Regions
+     * @return InLocation
      */
-    public function addUser(\AppBundle\Entity\Users $user)
+    public function addUser(\AppBundle\Entity\InUser $user)
     {
         $this->user[] = $user;
 
@@ -95,9 +95,9 @@ class Regions
     /**
      * Remove user
      *
-     * @param \AppBundle\Entity\Users $user
+     * @param \AppBundle\Entity\InUser $user
      */
-    public function removeUser(\AppBundle\Entity\Users $user)
+    public function removeUser(\AppBundle\Entity\InUser $user)
     {
         $this->user->removeElement($user);
     }

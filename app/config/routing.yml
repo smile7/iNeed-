@@ -24,15 +24,15 @@ fos_user_change_password:
 #HWIOAuthBundle routes
 hwi_oauth_security:
     resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
-    prefix: /login
+    prefix: /loginf
 
 hwi_oauth_connect:
     resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
-    prefix: /login
+    prefix: /loginf
 
 hwi_oauth_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
-    prefix:   /login
+    prefix:   /loginf
 
 hwi_oauth_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
@@ -44,4 +44,4 @@ hwi_oauth_connect:
 
 hwi_oauth_login:
     resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
-    prefix:   /login
+    prefix:   /loginf

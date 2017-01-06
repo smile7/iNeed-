@@ -84,9 +84,37 @@ AppBundle\Entity\InUser:
             options:
                 fixed: false
         bornYear:
-            type: datetime
+            type: date
             nullable: false
             column: born_year
+        facebook_id:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: facebook_id
+        facebook_access_token:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: facebook_access_token
+        google_id:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: google_id
+        google_access_token:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: google_access_token
         fullName:
             type: string
             nullable: false
@@ -94,4 +122,22 @@ AppBundle\Entity\InUser:
             options:
                 fixed: false
             column: full_name
+    manyToMany:
+        location:
+            targetEntity: InLocation
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: user
+            joinTable:
+                name: in_user_location
+                joinColumns:
+                    -
+                        name: user_id
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: location_id
+                        referencedColumnName: id
+            orderBy: null
     lifecycleCallbacks: {  }

@@ -1,6 +1,6 @@
-AppBundle\Entity\Ds:
+AppBundle\Entity\InService:
     type: entity
-    table: ds
+    table: in_service
     id:
         id:
             type: integer

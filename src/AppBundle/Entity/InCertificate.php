@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Certificates
+ * InCertificate
  *
- * @ORM\Table(name="certificates", indexes={@ORM\Index(name="FK_certificates_users_id", columns={"user_id"})})
+ * @ORM\Table(name="in_certificate", indexes={@ORM\Index(name="user_id", columns={"user_id"})})
  * @ORM\Entity
  */
-class Certificates
+class InCertificate
 {
     /**
      * @var integer
@@ -24,14 +24,14 @@ class Certificates
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */
-    private $name;
+    private $title;
 
     /**
-     * @var \AppBundle\Entity\Users
+     * @var \AppBundle\Entity\InUser
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Users")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\InUser")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      * })
@@ -51,37 +51,37 @@ class Certificates
     }
 
     /**
-     * Set name
+     * Set title
      *
-     * @param string $name
+     * @param string $title
      *
-     * @return Certificates
+     * @return InCertificate
      */
-    public function setName($name)
+    public function setTitle($title)
     {
-        $this->name = $name;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get title
      *
      * @return string
      */
-    public function getName()
+    public function getTitle()
     {
-        return $this->name;
+        return $this->title;
     }
 
     /**
      * Set user
      *
-     * @param \AppBundle\Entity\Users $user
+     * @param \AppBundle\Entity\InUser $user
      *
-     * @return Certificates
+     * @return InCertificate
      */
-    public function setUser(\AppBundle\Entity\Users $user = null)
+    public function setUser(\AppBundle\Entity\InUser $user = null)
     {
         $this->user = $user;
 
@@ -91,7 +91,7 @@ class Certificates
     /**
      * Get user
      *
-     * @return \AppBundle\Entity\Users
+     * @return \AppBundle\Entity\InUser
      */
     public function getUser()
     {
