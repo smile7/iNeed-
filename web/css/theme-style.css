@@ -170,6 +170,10 @@ article .paid-membership-long-ad {
 .search-results .results-for-list {
 	font-size: 16px;
 }
+
+.search-results .results-for-list .s {
+	font-style: italic;
+}
  
  /* END SEARCH RES */
  
