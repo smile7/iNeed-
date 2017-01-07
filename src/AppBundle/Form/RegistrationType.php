@@ -14,8 +14,8 @@ class RegistrationType extends AbstractType
             'translation_domain' => 'FOSUserBundle'));
 
 
-        $builder->add('bornYear', null, array('label' => 'form.bornYear',
-            'translation_domain' => 'FOSUserBundle'));
+        // $builder->add('bornYear', null, array('label' => 'form.bornYear',
+        //     'translation_domain' => 'FOSUserBundle'));
 
     }
 
