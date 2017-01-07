@@ -1,0 +1,33 @@
+AppBundle\Entity\UserServices:
+    type: entity
+    table: user_services
+    indexes:
+        FK_user_services_service_id:
+            columns:
+                - service_id
+    id:
+        userId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: user_id
+    fields:
+        price:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+    oneToOne:
+        service:
+            targetEntity: Services
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                service_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
