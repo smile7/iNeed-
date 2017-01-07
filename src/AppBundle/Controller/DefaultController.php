@@ -18,14 +18,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/login", name="login")
-     */
-    public function loginAction()
-    {
-        return $this->render('default/login.html.twig');
-    }
-
-    /**
      * @Route("/search-results", name="search-results")
      */
     public function searchResultsAction()
