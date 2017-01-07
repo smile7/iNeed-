@@ -187,16 +187,16 @@ article .paid-membership-long-ad {
  
  .single-profile .img-person {
 	box-shadow: 5px 5px 5px grey;
-	height: 300px;
+	height: 360px;
  	position: absolute;
  	right: 0;
  	top: 60px;
- 	width: 350px
+ 	width: 424px;
  }
  
  .single-profile .rating-container {
  	position: absolute;
- 	right: 75px;
+ 	right: 100px;
  }
  
  .single-profile .user-description {
@@ -205,8 +205,8 @@ article .paid-membership-long-ad {
  	font-size: 16px;
  	position: absolute;
  	right: 0;
- 	top: 390px;
- 	width: 350px;
+ 	top: 450px;
+ 	width: 424px;
  }
  
  .single-profile h1 {
