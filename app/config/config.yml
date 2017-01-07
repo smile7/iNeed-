@@ -70,15 +70,14 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-
-# fos configuration
 fos_user:
-    db_driver: orm
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: AppBundle\Entity\Users
     registration:
         form:
             type: AppBundle\Form\RegistrationType
+
 hwi_oauth:
     #this is a custom user provider, created from FOSUBUserProvider - will manage the 
     #automatic user registration on your site, with data from the provider (facebook. google, etc.)
