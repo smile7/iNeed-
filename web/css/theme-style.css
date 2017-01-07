@@ -187,11 +187,34 @@ article .paid-membership-long-ad {
  
  .single-profile .img-person {
 	box-shadow: 5px 5px 5px grey;
- 	float: right;
+	height: 360px;
+ 	position: absolute;
+ 	right: 0;
+ 	top: 60px;
+ 	width: 424px;
+ }
+ 
+ .single-profile .rating-container {
+ 	position: absolute;
+ 	right: 100px;
+ }
+ 
+ .single-profile .user-description {
+	box-shadow: 5px 5px 5px grey;
+ 	font-family: Comic Sans MS;
+ 	font-size: 16px;
+ 	position: absolute;
+ 	right: 0;
+ 	top: 450px;
+ 	width: 424px;
  }
  
  .single-profile h1 {
  	margin-top: 0;
+ }
+ 
+ .single-profile h3 {
+ 	margin-bottom: 20px;
  }
  
  /* END SINGLE PROFILE */
@@ -220,6 +243,17 @@ article .paid-membership-long-ad {
 
 /* ------- BASIC STYLES ------- */
 
+.col-md-6 {
+	position: relative !important;
+}
+
+.nice-hr {
+	border-bottom: 1px solid #96bdf8;
+	color: #123160;
+	font-weight: bold;
+	margin: 30px 0px 10px 15px;
+	text-transform: uppercase;
+}
 
 .img-center {
 	margin: 0 auto;
