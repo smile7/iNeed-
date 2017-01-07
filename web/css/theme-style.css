@@ -233,6 +233,33 @@ article .paid-membership-long-ad {
  
  /* END SINGLE PROFILE */
  
+ /* ------- Log In ------- */
+ 
+ .form-control {
+ 	width: 275px;
+ }
+ 
+ .login h1 {
+ 	margin-bottom: 60px;
+ }
+ 
+ .login .remember-me {
+ 	margin: 15px 0 0 15px;
+ }
+ 
+ .login .submit-btn {
+ 	width: 173px;
+ 	height: 30px;
+ 	font-weight: bold;
+ 	margin-right: 30px;
+ 	margin-left: 15px;
+ }
+ 
+ .fb-login {
+ 	width: 68px;
+ }
+ 
+ /* END LOGIN */
 
 /* ------- FOOTER ------- */
 
