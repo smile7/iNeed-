@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller
 {
@@ -32,5 +33,21 @@ class DefaultController extends Controller
     	return $this->render('default/profile.html.twig');
     }
     
-  
+    /**
+     * @Route("/chat/{userId}", name="chat")
+     */
+    public function chatAction($userId)
+    {
+    	return $this->render('chat.html.twig', array('userId'=>$userId));
+    }
+    
+    /**
+     * @Route("/currentUserId", name="current-user-id")
+     */
+    public function getCurrentUserIdAction()
+    {
+    	$response = new JsonResponse($this->getUser()->getId());
+    	return $response;
+    }
+    
 }
