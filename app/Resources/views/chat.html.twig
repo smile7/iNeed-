@@ -12,7 +12,6 @@
 <script src="../js/select-style.js"></script>
 <script>
 	var currentUserId;
-	debugger;
 	var sendToUserId = '{{ userId }}';
 	$.ajax({
 		type : 'GET',
@@ -41,8 +40,6 @@
 			conn.onmessage = function(e) {
 				var data = JSON.parse(e.data);
 				Chat.appendMessage(data.username, data.message);
-
-				console.log(data);
 			};
 
 			conn.onerror = function(e) {

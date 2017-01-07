@@ -13,9 +13,6 @@ class Chat implements MessageComponentInterface {
 	
 	public function onOpen(ConnectionInterface $conn) {
 		// Store the new connection to send messages to later
-		echo "USERIDDDDDD\n";
-		$session = $this->tokenStorage()->getToken()->getUser();
-		echo $session;
 		$this->clients->attach ( $conn );
 		echo "New connection! ({$conn->resourceId})\n";
 	}
@@ -25,9 +22,6 @@ class Chat implements MessageComponentInterface {
 		$message = json_decode ( $msg, true );
 		$currentUserId = $message ['currentUserId'];
 		$sendToUserId = $message ['sendToUserId'];
-		echo $currentUserId;
-		echo '\n';
-		echo $sendToUserId;
 		$i = 0;
 		foreach ( $this->clients as $client ) {
 			if ($i == 0) {
