@@ -1,0 +1,24 @@
+AppBundle\Entity\NewBaseUser:
+    type: entity
+    table: new_base_user
+    uniqueConstraints:
+        UNIQ_296F1DD6F85E0677:
+            columns:
+                - username
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        username:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }
